@@ -49,7 +49,7 @@ public class NormTestDataFR {
 	    			   case 0: double nValue0 = normalizeValue(0, Double.parseDouble(arrayTrainingDataLine[i]));
 	    			           arrTrainingData[i] = nValue0;
 	    			   break;
-	    			   case 2: arrTrainingData[i] = Double.parseDouble(arrayTrainingDataLine[i]);
+	    			   case 1: arrTrainingData[i] = Double.parseDouble(arrayTrainingDataLine[i]);
 	    			   		   //Geschlecht normalisieren
 	    			   		   arrTrainingData[i] = arrTrainingData[i] - 1.0;
 	    			   break;
