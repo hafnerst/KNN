@@ -4,6 +4,7 @@ public class Main {
 	
 
 	public static void main(String[] args) {
+		/*
 		double[] negPoint1 = {-1,-1};
 		double[] negPoint2 = {-2,-2};
 		double[] posPoint1 = {1,1};
@@ -23,15 +24,21 @@ public class Main {
 		posArrayList.add(posPoint2);
 		testData.add(actualPoint1);
 		testData.add(actualPoint2);
-		testData.add(actualPoint3);
+		testData.add(actualPoint3);*/
 		
-		TrainingDataFileReader trainingDatafr = new TrainingDataFileReader();
-		TestDataFileReader testDatafr = new TestDataFileReader();
+		//TrainingDataFileReader trainingDatafr = new TrainingDataFileReader();
+		//TestDataFileReader testDatafr = new TestDataFileReader();
+		
+		NormTrainingDataFR normTrainingDatafr = new NormTrainingDataFR();
+		NormTestDataFR normTestDatafr = new NormTestDataFR();
 		
 		//KNN knn = new KNN(negArrayList, posArrayList, testData);
 		//knn.runKNN();
 		
-		KNN knn2 = new KNN(trainingDatafr.getNegArrayList(), trainingDatafr.getPosArrayList(), testDatafr.getTestDataArrayList());
+		//KNN knn2 = new KNN(trainingDatafr.getNegArrayList(), trainingDatafr.getPosArrayList(), testDatafr.getTestDataArrayList());
+		//knn2.runKNN();
+		
+		KNN knn2 = new KNN(normTrainingDatafr.getNegArrayList(), normTrainingDatafr.getPosArrayList(), normTestDatafr.getTestDataArrayList());
 		knn2.runKNN();
 	}
 }
