@@ -10,15 +10,16 @@ public class NormTrainingDataFR {
 
     ArrayList<double[]> negArrayList = new ArrayList<double[]>();
 	ArrayList<double[]> posArrayList = new ArrayList<double[]>();
-	double [] xMin = new double[4];
-	double [] xMax = new double[4];
+	double [] xMin = new double[] { 1, 34, 34, 1000};
+	double [] xMax = new double[] { 100, 42, 42, 30000};
     
     public NormTrainingDataFR() {
     	try {
+    		/*
 			fr = new FileReader("app1.data");
 			br = new BufferedReader(fr);
 
-			/* xMin und xMax Werte der continous Attribute bestimmen */
+			// xMin und xMax Werte der continous Attribute bestimmen
 			for (String line = br.readLine(); line != null; line = br.readLine()) {
 				String[] arrayTrainingDataLine = line.split(",");
 				double[] arrTrainingData = new double[arrayTrainingDataLine.length-1];
@@ -36,7 +37,7 @@ public class NormTrainingDataFR {
 	    			   break;
     			   }
 		       }
-			}
+			}*/
 			
 			fr = new FileReader("app1.data");
 			br = new BufferedReader(fr);
