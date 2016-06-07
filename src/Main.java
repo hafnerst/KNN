@@ -38,7 +38,30 @@ public class Main {
 		//KNN knn2 = new KNN(trainingDatafr.getNegArrayList(), trainingDatafr.getPosArrayList(), testDatafr.getTestDataArrayList());
 		//knn2.runKNN();
 		
-		KNN knn2 = new KNN(normTrainingDatafr.getNegArrayList(), normTrainingDatafr.getPosArrayList(), normTestDatafr.getTestDataArrayList());
-		knn2.runKNN();
+		//KNN knn2 = new KNN(normTrainingDatafr.getNegArrayList(), normTrainingDatafr.getPosArrayList(), normTestDatafr.getTestDataArrayList());
+		//knn2.runKNN();
+		
+		//Größe des Arrays steuert wie viel k-Nachbarn betrachtet werden sollen
+		double errorRates[] = new double[30];
+		
+		for(int i = 0; i<errorRates.length; i++)
+		{
+			CrossValidation cv = new CrossValidation(normTrainingDatafr.getNegArrayList(), normTrainingDatafr.getPosArrayList(), normTestDatafr.getTestDataArrayList(), i+1);
+			errorRates[i] = (100-cv.runKNN());
+		}
+		
+		double minError = 100.0;
+		int indexMinError = 0;
+		for(int i = 0; i<errorRates.length; i++) 
+		{
+			if(errorRates[i] < minError)
+			{
+				minError = errorRates[i];
+				indexMinError = i;
+			}
+		}
+		
+		System.out.println("optimale Zahl nächster Nachbarn k ist:");
+		System.out.println("bei k: "+(indexMinError+1)+" mit einer Fehlerrate von: "+errorRates[indexMinError]);
 	}
 }
